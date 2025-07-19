@@ -1,13 +1,12 @@
 package me.tobiasliese.treesitter.jx.jx_parser.parser;
 
 import io.github.treesitter.jtreesitter.Node;
-import me.tobiasliese.treesitter.jx.jx_parser.result.jx_elements.JxExpression;
-import me.tobiasliese.treesitter.jx.jx_parser.result.module.JxModule;
-
 import java.util.AbstractMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.SequencedMap;
+import me.tobiasliese.treesitter.jx.jx_parser.result.jx_elements.JxExpression;
+import me.tobiasliese.treesitter.jx.jx_parser.result.module.JxModule;
 
 public class JxModuleParser {
     public static JxModule parseJxModule(Node node) {
@@ -31,14 +30,13 @@ public class JxModuleParser {
     }
 
     private static String parseModuleName(Node node) {
-        if (node.getChildren().size() != 1)
-            return "";
+        if (node.getChildren().size() != 1) return "";
         return node.getChildren().getFirst().getText();
     }
 
     private static SequencedMap<String, String> parseParameters(Node node) {
         SequencedMap<String, String> result = new LinkedHashMap<>();
-        for (var child: node.getChildren()) {
+        for (var child : node.getChildren()) {
             if (child.getType().equals("formal_parameter")) {
                 var entry = parseParameter(child);
                 result.put(entry.getKey(), entry.getValue());
@@ -50,7 +48,7 @@ public class JxModuleParser {
     private static Map.Entry<String, String> parseParameter(Node node) {
         String name = "";
         String type = "";
-        for (var child: node.getChildren()) {
+        for (var child : node.getChildren()) {
             if (child.getType().equals("identifier")) {
                 name = child.getText();
             } else {

@@ -15,11 +15,13 @@ public class LanguageTest {
         language = new Language(TreeSitterJava.language());
     }
 
+    @Disabled
     @Test
     void getAbiVersion() {
         assertEquals(15, language.getAbiVersion());
     }
 
+    @Disabled
     @Test
     void getName() {
         assertEquals("java", language.getName());

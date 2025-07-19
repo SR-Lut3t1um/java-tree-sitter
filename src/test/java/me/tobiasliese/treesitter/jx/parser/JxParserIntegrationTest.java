@@ -1,5 +1,7 @@
 package me.tobiasliese.treesitter.jx.parser;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,8 +9,6 @@ import java.util.stream.Collectors;
 import me.tobiasliese.treesitter.jx.jx_parser.JxParser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JxParserIntegrationTest {
     @Test

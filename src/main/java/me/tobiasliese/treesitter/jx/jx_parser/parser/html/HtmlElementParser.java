@@ -20,66 +20,30 @@ public class HtmlElementParser {
     }
 
     public static HtmlElement parseHtmlElement(Node node) {
-        if (!node.getType().equals("html_element"))
-            throw new IllegalStateException("unsupported element");
-        if (node.getChildren().size() != 1)
-            throw new IllegalStateException();
+        if (!node.getType().equals("html_element")) throw new IllegalStateException("unsupported element");
+        if (node.getChildren().size() != 1) throw new IllegalStateException();
         var child = node.getChildren().getFirst();
         switch (child.getType()) {
             case "a" -> {
                 return AElementParser.parseAElement(child);
             }
-            case "abbr" -> {
-
-            }
-            case "address" -> {
-
-            }
-            case "area" -> {
-
-            }
-            case "article" -> {
-
-            }
-            case "aside" -> {
-
-            }
-            case "audio" -> {
-
-            }
-            case "b" -> {
-
-            }
-            case "base" -> {
-
-            }
-            case "bdi" -> {
-
-            }
-            case "bdo" -> {
-
-            }
-            case "blockquote" -> {
-
-            }
-            case "body" -> {
-
-            }
-            case "br" -> {
-
-            }
-            case "button" -> {
-
-            }
-            case "canvas" -> {
-
-            }
-            case "caption" -> {
-
-            }
-            case "cite" -> {
-
-            }
+            case "abbr" -> {}
+            case "address" -> {}
+            case "area" -> {}
+            case "article" -> {}
+            case "aside" -> {}
+            case "audio" -> {}
+            case "b" -> {}
+            case "base" -> {}
+            case "bdi" -> {}
+            case "bdo" -> {}
+            case "blockquote" -> {}
+            case "body" -> {}
+            case "br" -> {}
+            case "button" -> {}
+            case "canvas" -> {}
+            case "caption" -> {}
+            case "cite" -> {}
             case "h1" -> {
                 return H1ElementParser.parseH1Element(child);
             }

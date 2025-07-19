@@ -34,7 +34,7 @@ public class JxFileParser {
 
     private static String parsePackageDeclaration(Node node) {
         StringBuilder builder = new StringBuilder();
-        for (var child: node.getChildren()) {
+        for (var child : node.getChildren()) {
             if (child.getType().equals("scoped_identifier")) {
                 parseScopedIdentifier(child, builder);
             }
@@ -44,13 +44,13 @@ public class JxFileParser {
 
     private static List<String> parseImportsDeclaration(Node node) {
         return node.getChildren().stream()
-            .map(JxFileParser::parseImportDeclaration)
-            .toList();
+                .map(JxFileParser::parseImportDeclaration)
+                .toList();
     }
 
     private static String parseImportDeclaration(Node node) {
         StringBuilder builder = new StringBuilder();
-        for (var child: node.getChildren()) {
+        for (var child : node.getChildren()) {
             if (child.getType().equals("scoped_identifier")) {
                 parseScopedIdentifier(child, builder);
             }
@@ -59,7 +59,7 @@ public class JxFileParser {
     }
 
     private static void parseScopedIdentifier(Node node, StringBuilder builder) {
-        for (var child: node.getChildren()) {
+        for (var child : node.getChildren()) {
             switch (child.getType()) {
                 case "scoped_identifier" -> {
                     parseScopedIdentifier(child, builder);
