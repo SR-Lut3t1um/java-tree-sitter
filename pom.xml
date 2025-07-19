@@ -209,7 +209,7 @@
           <reportsDirectory>
             ${project.build.directory}/reports/surefire
           </reportsDirectory>
-          <argLine>--enable-native-access=ALL-UNNAMED</argLine>
+          <argLine>--enable-native-access=jtreesitter</argLine>
         </configuration>
       </plugin>
       <plugin>
