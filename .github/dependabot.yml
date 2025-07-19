@@ -3,8 +3,7 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: weekly
-      day: sunday
+      interval: daily
     commit-message:
       prefix: ci
     labels: [dependencies]
@@ -16,8 +15,7 @@ updates:
   - package-ecosystem: gitsubmodule
     directory: /
     schedule:
-      interval: weekly
-      day: friday
+      interval: daily
     commit-message:
       prefix: build
     labels: [dependencies]
@@ -29,9 +27,7 @@ updates:
   - package-ecosystem: maven
     directory: /
     schedule:
-      interval: weekly
-      day: saturday
+      interval: daily
     commit-message:
       prefix: build
     labels: [dependencies]
-    open-pull-requests-limit: 1
