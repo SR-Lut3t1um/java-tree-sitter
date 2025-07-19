@@ -6,15 +6,21 @@ import me.tobiasliese.treesitter.jx.jx_parser.result.jx_elements.JxExpression;
 
 public class JxExpressionParser {
     public static JxExpression parseJxExpression(Node node) {
-        for (Node child : node.getChildren()) {
-            switch (child.getType()) {
-                case "jx_element" -> {}
-                case "jx_fragment" -> {}
-                case "html_element" -> {
-                    HtmlElementParser.parseHtmlElement(child);
-                }
+        Node child = node.getChildren().getFirst();
+        switch (child.getType()) {
+            case "jx_element" -> {
+
             }
+            case "jx_fragment" -> {
+
+            }
+            case "html_element" -> {
+                return HtmlElementParser.parseHtmlElement(child);
+            }
+            default ->
+                throw new IllegalStateException("unsupported element");
         }
+
         return null;
     }
 }
