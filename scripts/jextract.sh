@@ -4,7 +4,7 @@ package=io.github.treesitter.jtreesitter.internal
 output="$2/generated-sources/jextract"
 lib="$1/core/lib"
 
-exec /home/tobias/.sdkman/candidates/java/22.0.2-oracle/bin/jextract \
+exec jextract \
     --include-struct TSInput \
     --include-struct TSInputEdit \
     --include-struct TSLogger \
