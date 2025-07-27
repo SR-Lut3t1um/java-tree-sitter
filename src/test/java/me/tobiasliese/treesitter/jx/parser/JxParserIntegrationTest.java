@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.stream.Collectors;
-import me.tobiasliese.treesitter.jx.jx_parser.JxParser;
+import me.tobiasliese.treesitter.jx.jx_parser.parser.JxParser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
